@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @listing.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @listing.price %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @listing.category %>
+</p>
+
+<p>
+  <strong>Console compatibility:</strong>
+  <%= @listing.console_compatibility %>
+</p>
+
+<p>
+  <strong>Functional condition:</strong>
+  <%= @listing.functional_condition %>
+</p>
+
+<p>
+  <strong>Cosmetic condition:</strong>
+  <%= @listing.cosmetic_condition %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

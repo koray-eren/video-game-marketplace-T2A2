@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 1
+  category: MyString
+  console_compatibility: MyString
+  functional_condition: 1
+  cosmetic_condition: 1
+  description: MyText
+
+two:
+  name: MyString
+  price: 1
+  category: MyString
+  console_compatibility: MyString
+  functional_condition: 1
+  cosmetic_condition: 1
+  description: MyText
