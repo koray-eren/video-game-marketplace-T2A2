@@ -15,4 +15,7 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import 'listings';
-@import 'scaffolds';
+
+main {
+    max-width: 90vw;
+}
