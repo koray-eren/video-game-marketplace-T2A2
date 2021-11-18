@@ -57,3 +57,4 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'devise'
+gem "aws-sdk-s3", "~> 1.106"
