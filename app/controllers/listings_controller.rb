@@ -59,7 +59,6 @@ class ListingsController < ApplicationController
   def my_listings
     
   end
-  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +68,7 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:name, :price, :category, :console_compatibility, :functional_condition, :cosmetic_condition, :description, :image)
+      params.require(:listing).permit(:name, :price, :category, :console_compatibility, :functional_condition, :cosmetic_condition, :description, :user_id, :image)
     end
+    
 end

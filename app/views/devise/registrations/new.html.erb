@@ -15,6 +15,12 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :suburb,
+                required: true %>
+    <%= f.input :state,
+                required: true,
+                collection: ['VIC', 'NSW', 'NT', 'QLD', 'SA', 'WA', 'ACT'] %>
+                
   </div>
 
   <div class="form-actions">

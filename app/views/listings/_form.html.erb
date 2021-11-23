@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :category %>
-    <%= form.text_field :category %>
+    <%= form.select :category, ['Consoles', 'Games', 'Controllers', 'Bundles' ,'Miscellaneous'] %>
   </div>
 
   <div class="field">
@@ -39,6 +39,10 @@
   <div class="field">
     <%= form.label :cosmetic_condition %>
     <%= form.number_field :cosmetic_condition %>
+  </div>
+  
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id%>
   </div>
 
   <div class="field">
