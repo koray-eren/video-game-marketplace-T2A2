@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new edit update destroy ]
+  before_action :authorise_action, only: %i[ edit update destroy ] 
 
   # GET /listings or /listings.json
   def index
@@ -69,6 +71,13 @@ class ListingsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def listing_params
       params.require(:listing).permit(:name, :price, :category, :console_compatibility, :functional_condition, :cosmetic_condition, :description, :user_id, :image)
+    end
+
+    # Only allows the action on a listing if the current user is the listing's creator
+    def authorise_action
+      unless @listing.user == current_user
+        redirect_to listings_path, alert: "You do not have permission to perform this action."
+      end
     end
     
 end

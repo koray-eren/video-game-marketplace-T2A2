@@ -9,7 +9,7 @@
     <a href='<%= listing_path(listing) %>' class="btn btn-primary">View</a>
     <% if user_signed_in? && listing.user.id == current_user.id %>
     <a href='<%= edit_listing_path(listing) %>' class="btn btn-primary">Edit</a>
-    <%= link_to 'Delete', listing_path(listing), method: :delete, class: 'btn btn-primary', :data => {:confirm => 'Are you sure?'} %>
+    <%= link_to 'Delete', listing_path(listing), method: :delete, class: 'btn btn-danger', :data => {:confirm => 'Are you sure?'} %>
     <% end %>
   </div>
 </div>
