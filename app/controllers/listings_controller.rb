@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
 
   # GET /listings or /listings.json
   def index
+    # loads all listings
     @listings = Listing.all
   end
 
@@ -65,6 +66,7 @@ class ListingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
+      # loads the listing identified by param id
       @listing = Listing.find(params[:id])
     end
 

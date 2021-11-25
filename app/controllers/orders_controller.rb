@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
     
     # get /orders
     def index
+        #loads all orders as well as associated users and listings
         @orders = Order.all.eager_load(:user, :listing)
     end
 
@@ -30,6 +31,8 @@ class OrdersController < ApplicationController
         
         # find the order object based on id param
         def find_order
+            # loads the order identified by the param id, as well as that
+            # order's associated user, and listing
             @order = Order.eager_load(:user, :listing).find(params[:id])
         end
 end
