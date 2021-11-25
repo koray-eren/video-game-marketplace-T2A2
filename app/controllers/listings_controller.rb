@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: %i[ new edit update destroy ]
+  before_action :set_listing, only: %i[ show edit update destroy purchase ]
+  before_action :authenticate_user!, only: %i[ new edit update destroy purchase ]
   before_action :authorise_action, only: %i[ edit update destroy ] 
 
   # GET /listings or /listings.json
@@ -58,8 +58,8 @@ class ListingsController < ApplicationController
     end
   end
 
-  def my_listings
-    
+  # GET /listings/1/purchase
+  def purchase
   end
 
   private

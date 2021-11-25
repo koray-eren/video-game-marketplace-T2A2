@@ -12,8 +12,10 @@
         <a href='<%= edit_listing_path(listing) %>' class="btn btn-primary">Edit</a>
         <%= link_to 'Delete', listing_path(listing), method: :delete, class: 'btn btn-danger', :data => {:confirm => 'Are you sure?'} %>
       <% else %>
-        <%= link_to 'Purchase', nil, class: 'btn btn-success' %>
+        <%= link_to 'Purchase', purchase_listing_path(listing), class: 'btn btn-success' %>
       <% end %>
+    <% else %>
+      <%= link_to 'Purchase', purchase_listing_path(listing), class: 'btn btn-success' %>
     <% end %>
   </div>
 </div>

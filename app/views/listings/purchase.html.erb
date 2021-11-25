@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  Checkout
+</h1>
+
+<h3>
+  <br><%= @listing.name %>
+</h3>
+
+<%= image_tag @listing.image %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Console Compatibility</th>
+      <th scope="col">Functional Condition</th>
+      <th scope="col">Cosmetic Condition</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @listing.category %></td>
+      <td><%= @listing.console_compatibility %></td>
+      <td><%= @listing.functional_condition %> / 3</td>
+      <td><%= @listing.cosmetic_condition %> / 3</td>
+      <td><%= @listing.description %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3><br>Total: $<%= @listing.price %></h3>
+<%= link_to 'Cancel', listing_path(@listing), class: 'btn btn-danger' %>
+<%= link_to 'Confirm Purchase', nil, class: 'btn btn-success' %>

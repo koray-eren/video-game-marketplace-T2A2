@@ -12,9 +12,11 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <span class="border">
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </span>
+    <div class="container">
+      <span class="border">
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </span>
+    </div>
   </body>
 </html>
