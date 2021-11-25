@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+  <%= image_tag listing.image, class: 'card-img' if listing.image.attached? %>
+  <div class="card-body">
+    <h5 class="card-title"> <%= listing.name %> </h5>
+    <p class="card-text"> $<%= listing.price %> </p>
+    <p class="card-text"> Functional Condition: <%= listing.functional_condition %> / 3 </p>
+    </span>
+    <p class="card-text"> Cosmetic Condition: <%= listing.cosmetic_condition %> / 3</p>
+    <a href='<%= order_path(listing.order) %>' class="btn btn-primary">View</a>
+  </div>
+</div>

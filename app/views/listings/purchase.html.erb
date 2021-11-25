@@ -33,4 +33,5 @@
 
 <h3><br>Total: $<%= @listing.price %></h3>
 <%= link_to 'Cancel', listing_path(@listing), class: 'btn btn-danger' %>
-<%= link_to 'Confirm Purchase', nil, class: 'btn btn-success' %>
+<!-- order's user_id is the buyer -->
+<%= link_to 'Confirm Purchase', new_order_path(user_id: current_user.id, listing_id: @listing.id), class: 'btn btn-success', method: :post %>

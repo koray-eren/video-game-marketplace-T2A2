@@ -1,0 +1,63 @@
+<h1><%= @order.listing.name%></h1>
+<br>
+
+<h2 id='purchase_message'>Successful Purchase!</h2>
+<p>
+Purchased at: 
+<%= @order.created_at %>
+</p>
+
+<%= image_tag @order.listing.image %>
+
+<br>
+<br>
+
+<p> <strong>Seller: </strong><%= @order.listing.user.email%></p>
+<p> <strong>Buyer: </strong><%= @order.user.email%></p>
+
+<p>
+  <strong>Price:</strong>
+  $<%= @order.listing.price %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @order.listing.category %>
+</p>
+
+<p>
+  <strong>Console compatibility:</strong>
+  <%= @order.listing.console_compatibility %>
+</p>
+
+<p>
+  <strong>Functional condition:</strong>
+  <%= @order.listing.functional_condition %> / 3 :
+  <% if @order.listing.cosmetic_condition == 1 %>
+  <%= 'Not functional; for parts or repair' %>
+  <% elsif @order.listing.cosmetic_condition == 2 %>
+  <%= 'Works the majority of the time with some bugs/errors' %>
+  <% elsif @order.listing.cosmetic_condition == 3 %>
+  <%= 'Works flawlessly'%>
+  <% end %>
+</p>
+
+<p>
+  <strong>Cosmetic condition:</strong>
+  <%= @order.listing.cosmetic_condition %> / 3 :
+  <% if @order.listing.cosmetic_condition == 1 %>
+  <%= 'Heavy damage / scratching' %>
+  <% elsif @order.listing.cosmetic_condition == 2 %>
+  <%= 'Some visible damage / scratching' %>
+  <% elsif @order.listing.cosmetic_condition == 3 %>
+  <%= 'No scratches or damage'%>
+  <% end %>
+
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @order.listing.description %>
+</p>
+
+<%= link_to 'Back', orders_path, class: 'btn btn-primary' %>

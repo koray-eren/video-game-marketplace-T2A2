@@ -60,7 +60,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/purchase
   def purchase
-  end
+  end  
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listings</h1>
-
+<br>
 <div class="row">
   <% @listings.each do |listing| %>
-    <%= render 'card', listing: listing, class: 'col-3' %>
+    <% if listing.order == nil %>
+      <%= render 'card', listing: listing, class: 'col-3' %>
+    <% end %>
   <% end %>
 </div>

@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Orders</h1>
+<br>
+<div class="row">
+  <% @orders.each do |order| %>
+    <% if order.user == current_user %>
+        <%= render 'card', listing: order.listing, class: 'col-3' %>
+    <% end %>
+  <% end %>
+</div>
