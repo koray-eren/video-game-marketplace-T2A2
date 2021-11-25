@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
     has_one_attached :image
-    belongs_to :user
+    belongs_to :user, dependent: :destroy
 
     validates :name, :description, :functional_condition, :cosmetic_condition ,:image, presence: true
     validates :price, :cosmetic_condition, :functional_condition, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
