@@ -56,6 +56,12 @@ Purchased at:
 </p>
 
 <p>
+    <strong>Item Location: </strong>
+    <%= @order.listing.user.suburb %>,
+    <%= @order.listing.user.state%>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @order.listing.description %>
 </p>

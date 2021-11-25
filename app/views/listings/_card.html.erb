@@ -6,6 +6,8 @@
     <p class="card-text"> Functional Condition: <%= listing.functional_condition %> / 3 </p>
     </span>
     <p class="card-text"> Cosmetic Condition: <%= listing.cosmetic_condition %> / 3</p>
+    <p>Item Location: <%= listing.user.suburb %>, <%= listing.user.state%></p>
+
     <a href='<%= listing_path(listing) %>' class="btn btn-primary">View</a>
     <% if user_signed_in? %>
       <% if listing.user.id == current_user.id %>
