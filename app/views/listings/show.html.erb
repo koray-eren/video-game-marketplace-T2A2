@@ -24,11 +24,11 @@
 <p>
   <strong>Functional condition:</strong>
   <%= @listing.functional_condition %> / 3 :
-  <% if @listing.cosmetic_condition == 1 %>
+  <% if @listing.functional_condition == 1 %>
   <%= 'Not functional; for parts or repair' %>
-  <% elsif @listing.cosmetic_condition == 2 %>
+  <% elsif @listing.functional_condition == 2 %>
   <%= 'Works the majority of the time with some bugs/errors' %>
-  <% elsif @listing.cosmetic_condition == 3 %>
+  <% elsif @listing.functional_condition == 3 %>
   <%= 'Works flawlessly'%>
   <% end %>
 </p>
@@ -57,8 +57,10 @@
   <%= @listing.description %>
 </p>
 
+<%= link_to 'Back', listings_path, class: 'btn btn-primary' %>
 <% if user_signed_in? && @listing.user == current_user %>
   <%= link_to 'Edit', edit_listing_path(@listing), class: 'btn btn-warning' %>
+  <%= link_to 'Delete', listing_path(@listing), method: :delete, class: 'btn btn-danger', :data => {:confirm => 'Are you sure?'} %>
+<% else %>
+  <%= link_to 'Purchase', purchase_listing_path(@listing), class: 'btn btn-success' %>
 <% end %>
-<%= link_to 'Back', listings_path, class: 'btn btn-primary' %>
-<%= link_to 'Purchase', purchase_listing_path(@listing), class: 'btn btn-success' %>
