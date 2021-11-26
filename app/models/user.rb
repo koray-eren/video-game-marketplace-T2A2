@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :listings
-  has_one :order
+  has_many :orders
 
   validates :suburb, :state, presence: true
 
